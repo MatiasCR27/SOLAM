@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+    <div class="nav-wrapper">
+      <div class="logo-title">
+        <img src="logo.bg.jpg.jpeg" alt="Logo de SOLAM" class="logo">
+        <h1>SOLAM</h1>
+      </div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="iniciodesesionpersonal.html">Iniciar sesión</a></li>
+        <li><a href="registro.html">Registrarse</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+    <h1 id="loginTitle">Iniciar sesión - Paciente</h1>
+    <div class="role-selector">
+        <button type="button" class="role-button active" data-role="paciente">Paciente</button>
+        <button type="button" class="role-button" data-role="doctor">Doctor</button>
+    </div>
+    <form id="loginForm">
+        <input type="hidden" name="rol" id="rol" value="paciente">
+        <div class="input-box">
+            <input type="text" placeholder="Nombre de usuario" required>
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder="Contraseña" required>
+        </div>
+        <div class="input-box hidden" id="specialtyField">
+            <input type="text" placeholder="Especialización" name="especializacion">
+        </div>
+        <div class="remember-password">
+            <label>
+                <input type="checkbox"> Recordar contraseña
+            </label>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+        <button class="btn" type="submit">Ingresar</button>
+        <p class="register-link">
+            Todavía no tienes una cuenta?
+            <a href="#">Regístrate aquí</a>
+        </p>
+    </form>
+</div>
+
+<script>
+    const roleButtons = document.querySelectorAll('.role-button');
+    const rolInput = document.getElementById('rol');
+    const loginTitle = document.getElementById('loginTitle');
+
+    roleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            roleButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const role = button.dataset.role;
+            rolInput.value = role;
+            loginTitle.textContent = `Iniciar sesión - ${role === 'paciente' ? 'Paciente' : 'Doctor'}`;
+
+            const specialtyField = document.getElementById('specialtyField');
+            if (role === 'doctor') {
+                specialtyField.classList.remove('hidden');
+            } else {
+                specialtyField.classList.add('hidden');
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Completo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="logo-title">
+        <img src="logo.jpeg" alt="Logo de SOLAM" class="logo">
+        <h1>SOLAM</h1>
+      </div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="iniciodesesionpersonal.html">Iniciar sesión</a></li>
+        <li><a href="registro.html">Registrarse</a></li>
+      </ul>
+    </div>
+  </nav>
+    <h1>Formulario de Registro</h1>
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Datos Personales</legend>
+
+            <div class="form-row">
+                <div class="field-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="field-group">
+                    <label for="usuario">Nombre de usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="field-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field-group">
+                    <label for="fecha">Fecha de nacimiento:</label>
+                    <input type="date" id="fecha" name="fecha">
+                </div>
+                <div class="field-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="0" max="120">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field-group full-width">
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero">
+                        <option value="">Seleccione</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                        <option value="prefiero_no_decirlo">Prefiero no decirlo</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dirección</legend>
+
+            <div class="form-row">
+                <div class="field-group">
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" name="pais">
+                </div>
+                <div class="field-group">
+                    <label for="ciudad">Ciudad:</label>
+                    <input type="text" id="ciudad" name="ciudad">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field-group full-width">
+                    <label for="direccion">Dirección completa:</label>
+                    <input type="text" id="direccion" name="direccion">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Seguridad</legend>
+
+            <div class="form-row">
+                <div class="field-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="field-group">
+                    <label for="confirmar">Confirmar contraseña:</label>
+                    <input type="password" id="confirmar" name="confirmar" required>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Notificaciones</legend>
+            <div class="form-row">
+                <div class="field-group">
+                    <label class="question" id="notificacionesPregunta">¿Deseas recibir notificaciones?</label>
+                </div>
+                <div class="field-group radios">
+                    <input type="radio" id="noti-si" name="notificaciones" value="si">
+                    <label for="noti-si">Sí</label>
+
+                    <input type="radio" id="noti-no" name="notificaciones" value="no">
+                    <label for="noti-no">No</label>
+                </div>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Comentarios adicionales</legend>
+
+            <div class="form-row">
+                <div class="field-group full-width">
+                    <label for="comentarios">Información adicional:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field-group full-width">
+                    <label for="archivo">Subir foto de perfil:</label>
+                    <input type="file" id="archivo" name="archivo">
+                </div>
+            </div>
+        </fieldset>
+
+    
+        <fieldset>
+            <legend>Términos y condiciones</legend>
+            <div class="form-row">
+                <div class="field-group terms">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los términos y condiciones</label>
+                </div>
+                <div class="field-group terms">
+                    <input type="checkbox" id="privacidad" name="privacidad" required>
+                    <label for="privacidad">Acepto la política de privacidad</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <br>
+        <button type="submit">Registrarse</button>
+        <button type="reset">Limpiar formulario</button>
+
+    </form>
+
+</body>
+</html>
